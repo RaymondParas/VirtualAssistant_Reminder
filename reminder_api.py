@@ -52,5 +52,7 @@ def delete_reminder(body):
 
     if (response.status_code == 200):
         reminder_text = "The reminder was deleted"
+    elif (response.status_code == 404):
+        reminder_text = f"The reminder {body['name']} does not exist"
 
     return reminder_text
